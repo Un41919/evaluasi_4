@@ -152,13 +152,14 @@
           document.querySelector(".jumbotron h1").style.color = "black"; // Mengubah warna judul
           document.querySelector(".jumbotron p").style.color = "black"; // Mengubah warna paragraf
         }
+        // Simpan tema ke localStorage
+        localStorage.setItem("theme", theme);
       }
-
-      // Ambil tema dari localStorage saat halaman dimuat
-      window.onload = function () {
+      // Mengatur tema berdasarkan yang tersimpan di localStorage
+      document.addEventListener("DOMContentLoaded", function () {
         const savedTheme = localStorage.getItem("theme") || "light"; // Default ke 'light'
         setTheme(savedTheme); // Terapkan tema yang disimpan
-      };
+      });
     </script>
   </body>
 </html>
