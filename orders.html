@@ -134,7 +134,7 @@
     <section class="jumbotron text-center relatif" style="position: relative; margin-bottom: 150px; z-index: 1">
       <div class="container">
         <h1 class="display-4">Order Form</h1>
-        <form class="row g-3" method="post">
+        <form class="row g-3" method="post" name="order-form">
           <!-- Name -->
           <div class="col-md-4">
             <label for="inputName" class="form-label">Name</label>
@@ -255,6 +255,17 @@
       document.addEventListener("DOMContentLoaded", function () {
         const savedTheme = localStorage.getItem("theme") || "light"; // Default ke 'light'
         setTheme(savedTheme); // Terapkan tema yang disimpan
+      });
+    </script>
+    <script>
+      const scriptURL = "https://script.google.com/macros/s/AKfycbyZl9eT8rBPiExt3GAZ-vZxKFDulL-1DcUtmcnRbV8m2jAeX5qguoDYHdB4WDQwCqkfyA/exec";
+      const form = document.forms["order-form"];
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        fetch(scriptURL, { method: "POST", body: new FormData(form) })
+          .then((response) => console.log("Success!", response))
+          .catch((error) => console.error("Error!", error.message));
       });
     </script>
   </body>
