@@ -270,7 +270,7 @@
     <script>
       const scriptURL = "https://script.google.com/macros/s/AKfycbyZl9eT8rBPiExt3GAZ-vZxKFDulL-1DcUtmcnRbV8m2jAeX5qguoDYHdB4WDQwCqkfyA/exec";
       const form = document.forms["order-form"];
-      const timestamp = new Date();
+      const timestamp = new Date().toLocaleString();
 
       form.addEventListener("submit", (e) => {
         e.preventDefault();
