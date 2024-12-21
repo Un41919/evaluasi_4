@@ -23,6 +23,21 @@
         margin-top: 180px;
       }
 
+      /* Navbar */
+      .navbar {
+        z-index: 1030; /* Pastikan navbar memiliki z-index yang lebih tinggi */
+        position: fixed;
+      }
+
+      /* Jumbotron */
+      .jumbotron {
+        position: relative;
+        padding-top: 120px;
+        padding-bottom: 80px;
+        margin-top: 0; /* Pastikan tidak ada margin yang mengganggu */
+        z-index: 1; /* Pastikan jumbotron memiliki z-index yang lebih rendah */
+      }
+
       /* Menghindari overflow pada body */
       body {
         overflow-x: hidden; /* Menghindari scroll horizontal yang tidak diinginkan */
@@ -82,7 +97,7 @@
   </head>
   <body id="Home">
     <!-- Start Navbar -->
-    <nav class="navbar navbar-expand-lg shadow fixed-top">
+    <nav class="navbar navbar-expand-lg shadow fixed-top" style="z-index: 1030">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">
           <img id="logo" src="mini.png" alt="Bootstrap" width="120" height="40" />
@@ -116,12 +131,12 @@
     <!-- End Navbar -->
 
     <!-- Start Jumbotron -->
-    <section class="jumbotron text-center" style="position: relative; margin-bottom: 150px">
+    <section class="jumbotron text-center relatif" style="position: relative; margin-bottom: 150px; z-index: 1">
       <div class="container">
         <h1 class="display-4">Order Form</h1>
         <form class="row g-3">
           <!-- Name -->
-          <div class="col-md-4">
+          <div class="col-md-4" method="post">
             <label for="inputName" class="form-label">Name</label>
             <input type="text" class="form-control" id="inputName" />
           </div>
